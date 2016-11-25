@@ -24,7 +24,7 @@ func main() {
 	}
 
 	nameFilter := os.Args[1]
-	awsRegion := "us-east-1"
+	awsRegion := os.Args[2]
 	svc := ec2.New(sess, &aws.Config{Region: aws.String(awsRegion)})
 	fmt.Printf("listing instances with tag %v in: %v\n", nameFilter, awsRegion)
 	params := &ec2.DescribeInstancesInput{
